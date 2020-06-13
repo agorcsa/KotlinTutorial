@@ -73,15 +73,9 @@ fun main() {
 
 //    println(message)
 
-// creates a player called "player1"
     // creates an instance of the Player's class
     val player1 = Player("Andreea")
     player1.show()
-
-   /* println(player1.name)
-    println(player1.lives)
-    println(player1.level)
-    println(player1.score)*/
 
     val player2 = Player("Amber", 5)
     player2.show()
@@ -91,4 +85,34 @@ fun main() {
 
     val player4 = Player("Snow Flake", 2, 5, 1000)
     player4.show()
+
+    println(player3.weapon.name.toUpperCase())
+    println(player3.weapon.damageInflicted)
+
+    // more references to the same object
+    val axe = Weapon("Axe", 12)
+    player3.weapon = axe
+    println(player3.weapon.name)
+    println("Player3 has a weapon an ${axe.name}")
+
+    axe.damageInflicted = 24
+    println(axe.damageInflicted)
+    println(player3.weapon.damageInflicted)
+
+    player1.weapon = Weapon("Sword", 10)
+    player1.show()
+
+    player2.weapon = player1.weapon
+    player2.show()
+
+    player1.weapon = Weapon("Spear", 14)
+    player1.show()
+
+    // displays the details of each player:
+    // name, lives, level, score, weapon name, weapon damageInflicted
+
+    /*player1.show()
+    player2.show()
+    player3.show()
+    player4.show()*/
 }
