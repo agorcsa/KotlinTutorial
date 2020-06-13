@@ -44,7 +44,7 @@ fun main() {
         println("You're still alive!")
     }*/
 
-    println("How old are you: ")
+   /* println("How old are you: ")
     // the age will be given by the keyboard and kotlin will read the val
     val age = readLine()!!.toInt()
     println("age is $age")
@@ -61,7 +61,7 @@ fun main() {
         else -> {
             "You can vote"
         }
-    }
+    }*/
       // conditionals with if
 //    message = if (age < 18) {
 //        "You're too young to vote!"
@@ -71,5 +71,24 @@ fun main() {
 //        "You can vote"
 //    }
 
-    println(message)
+//    println(message)
+
+// creates a player called "player1"
+    // creates an instance of the Player's class
+    val player1 = Player("Andreea")
+    player1.show()
+
+   /* println(player1.name)
+    println(player1.lives)
+    println(player1.level)
+    println(player1.score)*/
+
+    val player2 = Player("Amber", 5)
+    player2.show()
+
+    val player3 = Player("Linux", 4, 8)
+    player3.show()
+
+    val player4 = Player("Snow Flake", 2, 5, 1000)
+    player4.show()
 }
