@@ -33,7 +33,7 @@ fun main() {
     println("My monthly salary is $monthlySalary$")*/
 
     // conditionals
-   /* val lives = 0;
+    /* val lives = 0;
     // can be true or false, depending of the value of "lives"
     var isGameOver = (lives < 1)
     println(isGameOver)
@@ -44,7 +44,7 @@ fun main() {
         println("You're still alive!")
     }*/
 
-   /* println("How old are you: ")
+    /* println("How old are you: ")
     // the age will be given by the keyboard and kotlin will read the val
     val age = readLine()!!.toInt()
     println("age is $age")
@@ -62,10 +62,10 @@ fun main() {
             "You can vote"
         }
     }*/
-      // conditionals with if
+    // conditionals with if
 
     // 3. conditionals with "if"
-   /*
+    /*
    val message: String
    message = if (age < 18) {
         "You're too young to vote!"
@@ -77,7 +77,7 @@ fun main() {
     println(message)
 */
     // 4. creates 4 instances of the Player's class
-    val player1 = Player("Andreea")
+    /* val player1 = Player("Andreea")
     player1.show()
 
     val player2 = Player("Amber", 5)
@@ -91,9 +91,9 @@ fun main() {
 
     println(player3.weapon.name.toUpperCase())
     println(player3.weapon.damageInflicted)
-
+*/
     // 5. more references to the same object
-    val axe = Weapon("Axe", 12)
+    /* val axe = Weapon("Axe", 12)
     player3.weapon = axe
     println(player3.weapon.name)
     println("Player3 has a weapon an ${axe.name}")
@@ -109,7 +109,7 @@ fun main() {
     player2.show()
 
     player1.weapon = Weapon("Spear", 14)
-    player1.show()
+    player1.show()*/
 
     // 6. displays the details of each player:
     // name, lives, level, score, weapon name, weapon damageInflicted
@@ -119,8 +119,45 @@ fun main() {
     player3.show()
     player4.show()*/
 
-    val redPotion = Loot("Red potion", LootType.POTION,  7.50)
+    /* val redPotion = Loot("Red potion", LootType.POTION,  7.50)
+    val chestArmor = Loot("+3 Chest Armor", LootType.ARMOR, 80.00)
+    val ringOfProtection = Loot("Ring of protection", LootType.RING, 40.25)
+    // alternative:
+    // player1.inventory.add(Loot("Ring of protection", LootType.RING, 40.25))
+
     player1.inventory.add(redPotion)
+    player1.inventory.add(chestArmor)
+    player1.inventory.add(ringOfProtection)
+    player1.inventory.add(Loot("Invisibility Potion", LootType.POTION, 35.95))
+
     player1.showInventory()
-    println(player1.toString())
+    println(player1.toString())*/
+
+    //for (i in 1..10) { }
+    /* for (i in 0 until 10) {
+        println(i)
+        println("$i squared is ${i * i}")
+    }*/
+
+    /*for (i in 10 downTo 0) {
+        println(i)
+    }*/
+
+    // creates a loop that prints out all the numbers from 0 to 100,
+    // that are divisible by both 3 and 5
+
+    // "%" modular operator, shows the rest of a division
+    /*for (i in 0 until 100) {
+        if ((i % 3 == 0) && (i % 5 == 0)) {
+            println(i)
+        }
+    }
+*/
+    // alternative to the code above using "step"
+    for (value in 3..100 step 3) {
+        if (value % 5 == 0) {
+            println(value)
+        }
+    }
 }
+
