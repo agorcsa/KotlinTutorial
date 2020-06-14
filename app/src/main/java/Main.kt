@@ -1,6 +1,6 @@
 fun main() {
     /*
-    // String interpolation
+    // 1. String interpolation
     println("Hello World")
     println("My first Kotlin program")
 
@@ -49,7 +49,7 @@ fun main() {
     val age = readLine()!!.toInt()
     println("age is $age")
 
-    // conditionals with when
+    // 2. conditionals with "when"
     val message: String
     message = when {
         age < 18 -> {
@@ -63,17 +63,20 @@ fun main() {
         }
     }*/
       // conditionals with if
-//    message = if (age < 18) {
-//        "You're too young to vote!"
-//    } else if (age == 100) {
-//        "Congratulations"
-//    } else {
-//        "You can vote"
-//    }
 
-//    println(message)
-
-    // creates an instance of the Player's class
+    // 3. conditionals with "if"
+   /*
+   val message: String
+   message = if (age < 18) {
+        "You're too young to vote!"
+    } else if (age == 100) {
+        "Congratulations"
+    } else {
+        "You can vote"
+    }
+    println(message)
+*/
+    // 4. creates 4 instances of the Player's class
     val player1 = Player("Andreea")
     player1.show()
 
@@ -89,7 +92,7 @@ fun main() {
     println(player3.weapon.name.toUpperCase())
     println(player3.weapon.damageInflicted)
 
-    // more references to the same object
+    // 5. more references to the same object
     val axe = Weapon("Axe", 12)
     player3.weapon = axe
     println(player3.weapon.name)
@@ -108,11 +111,16 @@ fun main() {
     player1.weapon = Weapon("Spear", 14)
     player1.show()
 
-    // displays the details of each player:
+    // 6. displays the details of each player:
     // name, lives, level, score, weapon name, weapon damageInflicted
 
     /*player1.show()
     player2.show()
     player3.show()
     player4.show()*/
+
+    val redPotion = Loot("Red potion", LootType.POTION,  7.50)
+    player1.inventory.add(redPotion)
+    player1.showInventory()
+    println(player1.toString())
 }
