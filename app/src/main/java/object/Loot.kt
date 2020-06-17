@@ -1,4 +1,4 @@
-
+package `object`
 enum class LootType {
     POTION, RING, ARMOR
 }

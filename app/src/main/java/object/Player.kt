@@ -1,5 +1,7 @@
-import android.os.Build
-import androidx.annotation.RequiresApi
+package `object`
+
+import `object`.Loot
+import `object`.Weapon
 
 class Player(val name: String, var level: Int = 1, var lives: Int = 3, var score: Int = 0) {
 
@@ -10,19 +12,24 @@ class Player(val name: String, var level: Int = 1, var lives: Int = 3, var score
     private val inventory = ArrayList<Loot>()
 
     fun showInventory() {
+        var total = 0.0
         println("$name's inventory")
         for (item in inventory) {
             println(item)
+            // displays the total value of the inventory
+            total += item.value
         }
+        println("============")
+        println("Total score is $total")
         println("============")
     }
 
     fun show() {
-       if (lives > 0) {
-           println("$name is alive")
-       } else {
-           println("$name is dead")
-       }
+        if (lives > 0) {
+            println("$name is alive")
+        } else {
+            println("$name is dead")
+        }
     }
 
     // returns a String
@@ -49,19 +56,37 @@ class Player(val name: String, var level: Int = 1, var lives: Int = 3, var score
             inventory.remove(item)
             true
         } else {
-           false
+            false
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
-    fun dropLoot(name: String): Boolean {
-        println("$name will be dropped")
+    // version 1
+//    @RequiresApi(Build.VERSION_CODES.N)
+//    fun dropLoot(name: String): Boolean {
+//        println("$name will be dropped")
+//
+//        for (item in inventory) {
+//             if (item.name == name) {
+//                inventory.remove(item)
+//                return true
+//            }
+//        }
+//        return false
+//    }
 
-        // "it" refers to the item which has been currently been checked
-
-        // if the item matches the name that we give,
-        // and the item exists in the list,
-        // the item will be deleted
-        return inventory.removeIf { it.name == name }
+    // version 2
+    fun dropLoot(name: String) : Boolean {
+        var result = false
+        for (item in inventory) {
+            if (item.name == name) {
+                inventory.remove(item)
+                result = true
+                break
+            }
+        }
+        return  result
     }
 }
+
+
+

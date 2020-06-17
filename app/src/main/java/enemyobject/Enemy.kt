@@ -1,3 +1,5 @@
+package enemyobject
+
 // class is declared open so that it can be extended
 // and function as a superclass/ base class
 open class Enemy(val name: String,
@@ -5,7 +7,7 @@ open class Enemy(val name: String,
             var lives: Int) {
 
 
-    fun takeDamage(damage: Int) {
+   open fun takeDamage(damage: Int) {
         val remainingHitPoints = hitPoints - damage
 
         if (remainingHitPoints > 0) {
@@ -17,7 +19,7 @@ open class Enemy(val name: String,
             if (lives > 0) {
                 println("$name lost a life")
             } else {
-                println("No lives left, $name is dead!")
+                println("No lives left, $name is dead! ")
             }
         }
 
@@ -29,7 +31,7 @@ open class Enemy(val name: String,
         // lives = lives % 3        lives %= 2
     }
 
-    // called in order to display the "Enemy" object attributes properly,
+    // called in order to display the "enemyobject.Enemy" object attributes properly,
     // not using an ID assigned by Kotlin
     override fun toString(): String {
         return "Name: $name, Hitpoints: $hitPoints, Lives: $lives"
